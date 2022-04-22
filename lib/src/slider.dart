@@ -138,9 +138,14 @@ class _SliderButtonState extends State<SliderButton> {
                   )
                 : Dismissible(
                     key: UniqueKey(),
+                    background: Container(
+                      decoration: BoxDecoration(
+                          color: Theme.of(context).primaryColor,
+                          borderRadius: BorderRadius.circular(widget.radius)
+                      ),
+                    ),
                     direction: DismissDirection.startToEnd,
                     dismissThresholds: {DismissDirection.startToEnd: widget.dismissThresholds},
-
                     ///gives direction of swiping in argument.
                     onDismissed: (dir) async {
                       setState(() {
